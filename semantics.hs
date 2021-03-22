@@ -215,7 +215,7 @@ firsts Empty                    s = Just []
 empty :: RuleTree a ->        Bool
 empty (Seq       [])          = True
 empty (Seq       (rt:rts))    = empty rt && empty (Seq rts)
-empty (Choice    [])          = False
+empty (Choice    [])          = True
 empty (Choice    (rt:rts))    = empty rt || empty (Choice rts)
 empty (Parallel  [])          = True
 empty (Parallel  (rt:rts))    = empty rt && empty (Parallel rts)
